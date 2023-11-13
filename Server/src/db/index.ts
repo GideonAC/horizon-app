@@ -1,9 +1,9 @@
 import mongoose from "mongoose"
 
-
+const MONGODB_URI = process.env.MONGODB_URI as string
 export const DATABASE = async () => {
     try {
-      const connect = await mongoose.connect(`mongodb+srv://arinzechukwugideon:uVYhuaFwpCauwRMw@cluster0.r9hs4rt.mongodb.net/`);
+      const connect = await mongoose.connect(MONGODB_URI);
      console.log(
         `database has been connected successfully to ${JSON.stringify(
           connect.connection.host,
